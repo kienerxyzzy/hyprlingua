@@ -126,3 +126,54 @@ NEXT.addEventListener("click", () => {
   document.getElementById("panel1").classList.remove("focused");
   document.getElementById("panel2").classList.remove("focused");
 });
+const EMAIL = document.getElementById("scrmail");
+const PHONE = document.getElementById("scrphone");
+function garbage(l) {
+  e = "";
+  for (let i = 0; i < l; i++) {
+    e += "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[
+      Math.floor(Math.random() * 62)
+    ];
+  }
+  return e;
+}
+function scrmail() {
+  let e = "";
+  e += garbage(12);
+  e += "@";
+  for (let i = 0; i < 5; i++) {
+    e += "0123456789abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 36)];
+  }
+  e += "." + ["com", "net", "org", "edu"][Math.floor(Math.random() * 4)];
+  EMAIL.innerText = e;
+}
+function scrphone() {
+  let e = "(+84) 0";
+  for (let i = 0; i < 2; i++) {
+    e += "0123456789"[Math.floor(Math.random() * 10)];
+  }
+  e += "&nbsp;";
+  for (let i = 0; i < 3; i++) {
+    e += "0123456789"[Math.floor(Math.random() * 10)];
+  }
+  e += "&nbsp;";
+  for (let i = 0; i < 4; i++) {
+    e += "0123456789"[Math.floor(Math.random() * 10)];
+  }
+  e += "&nbsp;";
+  PHONE.innerHTML = e;
+}
+setInterval(scrmail, 100);
+setInterval(scrphone, 100);
+let sc = 0;
+document.getElementById("secret").addEventListener("click", () => {
+  sc++;
+  Type("", 36.7);
+  document.getElementById("secret").innerText = btoa("The Creator");
+  document.getElementById("secret2").innerText = btoa(
+    btoa(`You have clicked ${sc} times. Please stop.`)
+  );
+  document.getElementById("panel0").classList.remove("focused");
+  document.getElementById("panel1").classList.remove("focused");
+  document.getElementById("panel2").classList.remove("focused");
+});
