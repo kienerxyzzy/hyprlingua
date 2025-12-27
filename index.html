@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <h1>Hypr&trade;</h1>
+      <h3>A simple, fast programming language by KCN-037</h3>
+      <p>forgive my crappy CSS, it's still a work in progress</p>
+    </div>
+    <h1>
+      Built with<span id="demo">simplicity</span
+      ><span id="cursor" class="blink">_</span>in mind.<span
+        class="btn black"
+        id="next"
+        >==></span
+      >
+    </h1>
+    <div class="grid3">
+      <div class="panel" id="panel0">
+        <h3>
+          Hypr directly compiles to HyprASM, a form of assembly optimized for
+          VMs, allowing for high-speed computation.
+        </h3>
+        <code id="i_dont_wanna_add_code_myself_2" style="word-break: break-all">
+        </code>
+      </div>
+      <div class="panel focused" id="panel1">
+        <h3>
+          Hypr has a simple, intuitive syntax for newcomers. <br />And if you
+          ever wanted to revert to Hypr 1.0-style syntax, add
+          <span class="black">#legacy10</span> to the top of your code.
+        </h3>
+        <code id="i_dont_wanna_add_code_myself"></code>
+      </div>
+
+      <div class="panel" id="panel2">
+        <h3>
+          The source code of Hypr is completely open-source, and *mostly* split
+          into multiple files for readablity.
+        </h3>
+        <h3 class="black" style="padding: 10px; width: fit-content">
+          <a
+            href="https://github.com/kienerxyzzy/hypr"
+            style="color: white; text-decoration: none"
+            >View on Github</a
+          >
+        </h3>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
 </html>

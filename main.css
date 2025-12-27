@@ -1,0 +1,92 @@
+* {
+  font-family: "Cascadia Code";
+  transition: 100ms;
+}
+body {
+  margin: 0;
+  text-align: center;
+}
+.banner {
+  color: white;
+  background: radial-gradient(white 0%, black 10%);
+  background-size: 30px 30px;
+  padding: 10px;
+}
+.banner::selection {
+  color: black;
+  background-color: white;
+}
+.banner h1 {
+  font-size: 10em;
+  margin: 0px;
+}
+#demo {
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+#cursor {
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+#next {
+  padding: 10px;
+  margin-left: 20px;
+
+  cursor: pointer;
+}
+#next.disabled {
+  pointer-events: none;
+}
+.black {
+  background-color: black;
+  color: white;
+}
+#cursor.blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+code {
+  height: 10em;
+  overflow-y: scroll;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+}
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.panel {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: justify;
+  opacity: 50%;
+  transform: scale(90%);
+  filter: blur(5px);
+  pointer-events: none;
+}
+.panel.focused {
+  transform: none;
+  opacity: 100%;
+  filter: none;
+  pointer-events: all;
+}

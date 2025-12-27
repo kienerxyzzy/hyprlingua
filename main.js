@@ -1,0 +1,128 @@
+const TEXT = document.getElementById("demo");
+const CRSR = document.getElementById("cursor");
+function Type(text, t, then) {
+  CRSR.className = "";
+  //step 1: clear
+  let time = 0;
+  let temp = TEXT.innerHTML;
+  for (let i = temp.length; i >= 0; i--) {
+    time += t;
+    setTimeout(() => {
+      TEXT.innerHTML = temp.substring(0, i);
+    }, time);
+  }
+  //step 2: unclear
+  for (let i = 1; i <= text.length; i++) {
+    time += t;
+    setTimeout(() => {
+      TEXT.innerHTML = text.substring(0, i);
+    }, time);
+  }
+  //step 3: recursor
+  time += t;
+  setTimeout(() => {
+    CRSR.className = "blink";
+  }, time);
+  if (then) {
+    time += t;
+    setTimeout(then, time);
+  }
+}
+const tab = String.fromCharCode(127).repeat(3);
+document.getElementById("i_dont_wanna_add_code_myself").innerText = `var _count
+_count=0
+call main
+jmp @halt
+
+function collatz
+takes acc
+var length
+_count++
+length=0
+while acc>1
+${tab}length++
+${tab}if acc%2==0
+${tab}${tab}acc/=2
+${tab}else
+${tab}${tab}acc=3*acc+1
+${tab}endc #End Condition
+endl #End Loop
+return length
+endf
+
+function main
+var start
+var length
+var maxlen
+start=0
+maxlen=-1
+while start<10000
+start++
+${tab}call collatz start
+${tab}retrieve length
+${tab}if length>maxlen
+${tab}${tab}maxlen=length
+${tab}${tab}push "New Longest Collatz Sequence Found! Starting at "+start+", "+length+" element(s) long."
+${tab}${tab}invoke print
+${tab}endc
+endl
+push "The function has been called "+_count+" times.";
+invoke print
+return
+endf
+
+@halt`;
+document.getElementById(
+  "i_dont_wanna_add_code_myself_2"
+).innerText = `0 0 = 13 jsr
+24 jmp
+1 swap = 0 0 ? 1 + = 2 0 =
+1 ? 1 > isf
+6 jmp
+12 jmp
+2 2 ? 1 + = 1 ? 2 % 0 == isf
+9 jmp
+10 jmp
+1 1 ? 2 / = 11 jmp
+1 3 1 ? * 1 + =
+3 jmp
+2 ? rtn
+3 0 = 4 1 -u =
+3 ? 10000 < isf
+17 jmp
+23 jmp
+3 3 ? 1 + = 3 ? 2 jsr
+5 swap = 5 ? 4 ? > isf
+21 jmp
+22 jmp
+4 5 ? = "4e6577204c6f6e6765737420436f6c6c61747a2053657175656e636520466f756e6421205374617274696e6720617420 3 ? + "2c20 + 5 ? + "20656c656d656e74287329206c6f6e672e + "7072696e74 invoke
+14 jmp
+"5468652066756e6374696f6e20686173206265656e2063616c6c656420 0 ? + "2074696d65732e + "7072696e74 invoke rtn`;
+
+let panel = 1;
+const paneltexts = [
+  ["efficiency", "performance", "speed", "productivity"],
+  [
+    "newcomers",
+    "beginners",
+    "simplicity",
+    "minimalism",
+    "everyone",
+    "programmers",
+  ],
+  ["the community", "open source", "developers", "everyone"],
+];
+const NEXT = document.getElementById("next");
+NEXT.addEventListener("click", () => {
+  NEXT.classList.add("disabled");
+  panel++;
+  panel %= 3;
+  let temp = paneltexts[panel];
+  Type(temp[Math.floor(Math.random() * temp.length)], 50, () => {
+    NEXT.classList.remove("disabled");
+    document.getElementById(`panel${panel}`).classList.add("focused");
+  });
+  document.getElementById("panel0").classList.remove("focused");
+  document.getElementById("panel1").classList.remove("focused");
+  document.getElementById("panel2").classList.remove("focused");
+});
