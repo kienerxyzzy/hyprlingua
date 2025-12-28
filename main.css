@@ -1,5 +1,5 @@
 * {
-  font-family: "Cascadia Code","Courier New",monospace;
+  font-family: "Space Mono", monospace;
   transition: 100ms;
 }
 body {
@@ -74,28 +74,25 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.panel.blurry {
+  opacity: 50%;
+  transform: scale(90%);
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
 .panel {
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   text-align: justify;
-  opacity: 50%;
-  transform: scale(90%);
-  filter: blur(5px);
-  pointer-events: none;
 }
-.panel.focused {
-  transform: none;
-  opacity: 100%;
-  filter: none;
-  pointer-events: all;
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.center{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#secret{
-    cursor:pointer;
+#secret {
+  cursor: pointer;
 }

@@ -120,11 +120,11 @@ NEXT.addEventListener("click", () => {
   let temp = paneltexts[panel];
   Type(temp[Math.floor(Math.random() * temp.length)], 50, () => {
     NEXT.classList.remove("disabled");
-    document.getElementById(`panel${panel}`).classList.add("focused");
+    document.getElementById(`panel${panel}`).classList.remove("blurry");
   });
-  document.getElementById("panel0").classList.remove("focused");
-  document.getElementById("panel1").classList.remove("focused");
-  document.getElementById("panel2").classList.remove("focused");
+  document.getElementById("panel0").classList.add("blurry");
+  document.getElementById("panel1").classList.add("blurry");
+  document.getElementById("panel2").classList.add("blurry");
 });
 const EMAIL = document.getElementById("scrmail");
 const PHONE = document.getElementById("scrphone");
@@ -178,7 +178,7 @@ Laи́waиӣiaи Ч̂eaάλиaгkaиeи (45Kи́/г): Ч74K36 - LЧK-74
 Aгг̄ ot aъoάe aʟe zfʟai∂µf Kaʟъoиeиzµaiиz, иo ъʟaиzµez. Fµeʟe'z aгzo 'гom ьи́ʟifλ' άaʟiaиf mifµ wixeƋ Kaʟъoиeиzµaiиz, ъи́f oигλ ʟaи∂e tʟow ги́kaɿKи́/г fo maиӣaKи́/г.`, 36.7);
   document.getElementById("secret").innerText = "Zfoиkaгλazafoиe";
   document.getElementById("secret2").innerText = `Koи∂ʟafzeи! λoи́ ƋizkoάeʟeƋ zekʟef гaи∂и́a∂e ot Laи́waиӣia, zьokeи oигλ iи Fawги́keиӣafoи!`;
-  document.getElementById("panel0").classList.remove("focused");
-  document.getElementById("panel1").classList.remove("focused");
-  document.getElementById("panel2").classList.remove("focused");
+  document.getElementById("panel0").classList.add("blurry");
+  document.getElementById("panel1").classList.add("blurry");
+  document.getElementById("panel2").classList.add("blurry");
 });
