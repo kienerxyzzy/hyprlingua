@@ -28,7 +28,7 @@ function Type(text, t, then) {
     setTimeout(then, time);
   }
 }
-const tab = String.fromCharCode(127).repeat(3);
+const tab = "\xa0".repeat(3);
 document.getElementById("i_dont_wanna_add_code_myself").innerText = `var _count
 _count=0
 call main
